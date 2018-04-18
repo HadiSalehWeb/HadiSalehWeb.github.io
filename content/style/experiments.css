@@ -1,0 +1,36 @@
+#experiments-page { font-size: .5em; color: #D7BA7D; padding: 10px; display: none; }
+html.experiments-page #experiments-page { display: block; }
+
+html.experiments-page nav { display: block }
+
+html.experiments-page nav { color: white; background-color: #2D2D30; }
+html.experiments-page #nav-toggle span,
+html.experiments-page #nav-toggle span:after,
+html.experiments-page #nav-toggle span:before { background-color: white }
+html.experiments-page #nav-toggle:hover span,
+html.experiments-page #nav-toggle:hover span:after,
+html.experiments-page #nav-toggle:hover span:before { background-color: #9CDCFE }
+html.experiments-page #main-icon:hover { color: #9CDCFE }
+
+#experiments-page .center-horizontal { width: 100%; max-width: 700px }
+#experiments-page img { max-width: 100%; }
+#experiments-page [data-experiment] div { text-align: center }
+
+#experiments-page h1 { font-size: 27px; margin-bottom: 13px; }
+#experiments-page p { font-size: 15px; margin-bottom: 17px; }
+#experiments-page a:link { text-decoration: underline; color: inherit }
+#experiments-page a:visited { color: inherit }
+#experiments-page a:active { color: inherit }
+#experiments-page a:hover { color: #9CDCFE }
+
+#experiments-page.animating h1,
+#experiments-page.animating span, /*if position is relative the links won't work*/
+#experiments-page.animating p,
+#experiments-page.animating [data-experiment] div { position: relative; transition: left, .5s ease-out; left: -100vw; }
+
+div[data-experiment] { margin-top: 60px; }
+    div[data-experiment] span { float: right; padding: 4px }
+        div[data-experiment] span i { color: #D7BA7D; transition: color, transform, .2s; }
+            div[data-experiment] span i:hover { color: #9CDCFE; transform: scale(1.4) }
+
+/*.fa-github-invert { background-color: #D7BA7D; line-height: 1em; border-radius: 100%; color: #1E1E1E }*/

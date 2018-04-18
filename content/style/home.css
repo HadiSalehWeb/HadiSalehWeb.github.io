@@ -1,0 +1,43 @@
+#home-page { padding: 0 10px; display: none }
+
+html.home-page #home-page { display: block }
+
+#start-text { height: 100vh; color: #1E1E1E; text-align: center; width: 100%; }
+
+#start-text-animate { position: relative; transition: opacity, top, .5s cubic-bezier(0, 0.5, 0.25, 1); }
+#start-text .center { min-width: 80%; }
+#home-page.fade-in #start-text-animate { opacity: 1; top: 0; }
+#home-page.fade-out #start-text-animate { opacity: 0; top: 60px; }
+#links div { cursor: pointer; }
+
+@media (max-width: 1100px) {
+    #links div { margin: 20% auto; text-align: center; cursor: pointer; position: relative; transition: left, right, .5s cubic-bezier(0, 0.5, 0.25, 1); }
+    #home-page.fade-out #links div { transition-duration: 1s }
+    #home-page.fade-in #links div:nth-child(2n) { right: 0; }
+    #home-page.fade-in #links div:nth-child(2n + 1) { left: 0; }
+    #home-page.fade-out #links div:nth-child(2n) { right: 100%; }
+    #home-page.fade-out #links div:nth-child(2n + 1) { left: 100%; }
+}
+
+@media (min-width: 1100px) {
+    html.home-page { overflow-y: hidden; }
+
+    #links div { position: absolute; margin: 0; transition: top, right, left, bottom, font-size, .5s; }
+    #home-page.fade-in #links div:hover { font-size: 1.2em; transition-duration: .2s; }
+
+    #links div:nth-child(1), #links div:nth-child(4) { left: 50%; transform: translate(-50%, 0); }
+    #links div:nth-child(2), #links div:nth-child(3) { top: 50%; transform: translate(0, -50%); }
+
+    #home-page.fade-in #links div:nth-child(1) { top: 30px; }
+    #home-page.fade-in #links div:nth-child(2) { right: 30px; }
+    #home-page.fade-in #links div:nth-child(4) { bottom: 30px; }
+    #home-page.fade-in #links div:nth-child(3) { left: 30px; }
+    #home-page.fade-in #links div:nth-child(1):hover { top: 40px; }
+    #home-page.fade-in #links div:nth-child(2):hover { right: 40px; }
+    #home-page.fade-in #links div:nth-child(4):hover { bottom: 40px; }
+    #home-page.fade-in #links div:nth-child(3):hover { left: 40px; }
+    #home-page.fade-out #links div:nth-child(1) { top: -40px; }
+    #home-page.fade-out #links div:nth-child(2) { right: -180px; }
+    #home-page.fade-out #links div:nth-child(4) { bottom: -40px; }
+    #home-page.fade-out #links div:nth-child(3) { left: -180px; }
+}
