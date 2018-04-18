@@ -1,12 +1,12 @@
 'use strict';
 
-if (!window.HadiSaleh)
-    window.HadiSaleh = {};
+if (!window.HS)
+    window.HS = {};
 
-window.HadiSaleh.MathH = (function () {
-    const TWO_PI = Math.PI * 2, PI = Math.PI;
+window.HS.MathH = (function () {
+    var TWO_PI = Math.PI * 2, PI = Math.PI;
 
-    const randomBetween = function (a, b) {
+    var randomBetween = function (a, b) {
         return a + Math.random() * (b - a);
     }
 
@@ -25,7 +25,7 @@ window.HadiSaleh.MathH = (function () {
     RandomAroundPoint.prototype = RandomRange.prototype;
 
     function logistic(x, options) {
-        let l = 1, k = 10, x0 = .5;
+        var l = 1, k = 10, x0 = .5;
         if (options) {
             l = options.l || 1;
             k = options.k || 10;
@@ -35,7 +35,7 @@ window.HadiSaleh.MathH = (function () {
     }
 
     function parabola(x, options) {
-        let a = 1;
+        var a = 1;
         if (options) {
             a = options.a || 1;
         }
