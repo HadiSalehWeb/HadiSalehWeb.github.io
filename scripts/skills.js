@@ -41,10 +41,10 @@ window.HS.Skills = (function () {
                     skillsDiv.className = 'fade-out';
                     void (skillsDiv.offsetHeight);
                     void (nav.offsetHeight);
-                    nav.style.top = '0';
                     document.documentElement.classList.add('skills-page');
                     HS.Site.resizeCanvas('#FFF056');
                     skillsDiv.className = 'fade-in';
+                    nav.style.top = '0';
                 });
         },
         fadeIn: function () {
@@ -54,12 +54,14 @@ window.HS.Skills = (function () {
             skillsDiv.className = 'fade-out';
             void (skillsDiv.offsetHeight);
             void (nav.offsetHeight);
-            nav.style.top = '0';
             document.documentElement.classList.add('skills-page');
             HS.Site.resizeCanvas('#FFF056');
             skillsDiv.className = 'fade-in';
+            console.log('in');
+            nav.style.top = '0';
         },
         fadeOut: function () {
+            nav.style.top = '-41px';
             skillsDiv.className = 'fade-out';
             setTimeout(function () {
                 document.documentElement.classList.remove('skills-page');
