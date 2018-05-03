@@ -31,21 +31,34 @@ window.HS.Site = (function () {
         currentTabName = name;
     }
 
+    var links = document.getElementById('links');
+    var navUl = document.querySelector('nav ul');
+
     document.getElementById('main-icon').onclick = function () {
         transitionTo('index.html');
     }
 
-    document.getElementById('links').children[0].onclick = function () {
-        transitionTo('experiments.html');
-    }
-    document.getElementById('links').children[2].onclick = function () {
-        transitionTo('skills.html');
-    }
+    links.children[0].onclick =
+        navUl.children[0].onclick = function () {
+            transitionTo('experiments.html');
+        }
+    links.children[2].onclick =
+        navUl.children[2].onclick = function () {
+            transitionTo('skills.html');
+        }
+    links.children[1].onclick =
+        navUl.children[1].onclick = function () {
+            transitionTo('projects.html');
+        }
+    links.children[3].onclick =
+        navUl.children[3].onclick = function () {
+            transitionTo('contact.html');
+        }
 
     var colorLoader = function (color, bg) {
         loadingDiv.children[0].innerHTML = //A style element
-            '.loader {color: ' + color + '}' +
-            '.loader:before, .loader:after{background - color: ' + bg + ' }';
+            '.loader { color: ' + color + ' }' +
+            '.loader:before, .loader:after { background-color: ' + bg + ' }';
     }
 
     window.onpopstate = function (e) {
