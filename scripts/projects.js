@@ -49,7 +49,7 @@ window.HS.Projects = (function () {
             nav.style.top = '-41px';
             projDiv.className = 'fade-out';
             setTimeout(function () {
-                document.documentElement.classList.remove('contact-page');
+                document.documentElement.classList.remove('projects-page');
             }, 500);
         },
         onresize: function () {
