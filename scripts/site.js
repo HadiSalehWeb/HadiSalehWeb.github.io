@@ -9,6 +9,7 @@ if (!window.HS)
 window.HS.Site = (function () {
     var currentTabName, canvas = document.getElementById('background-canvas'), ctx = canvas.getContext('2d');
     var loadingDiv = document.getElementById('loading');
+    var nav = document.querySelector('nav');
 
     //resize handling
     var doit = null;
@@ -18,17 +19,18 @@ window.HS.Site = (function () {
 
     //Navigation hamburger
     document.getElementById('nav-toggle').onclick = function () {
-        var nav = document.querySelector('nav');
         nav.className = nav.className === 'active' ? '' : 'active';
     }
 
     var transitionTo = function (name) {
         //var tab = HS.States[name];
         if (currentTabName === name) return;
-        HS.States[currentTabName].fadeOut();
         history.pushState({ tabName: name }, "Hadi Saleh", name);
-        HS.States[name].fadeInFromAnotherPage(currentTabName);
-        currentTabName = name;
+        nav.className = '';
+        HS.States[currentTabName].fadeOut(function () {
+            HS.States[name].fadeInFromAnotherPage(currentTabName);
+            currentTabName = name;
+        });
     }
 
     var links = document.getElementById('links');

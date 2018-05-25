@@ -12,7 +12,7 @@ html.skills-page #nav-toggle:hover span:after,
 html.skills-page #nav-toggle:hover span:before { background-color: #9CDCFE }
 html.skills-page #main-icon:hover { color: #9CDCFE }
 
-#skills-page h1 { margin: 16px 0; position: relative; transition: bottom, opacity, .5s }
+#skills-page h1 { margin: 16px 0; font-size: 51px; position: relative; transition: bottom, opacity, .5s }
 #skills-page.fade-out h1 { bottom: 10px; opacity: 0; }
 #skills-page.fade-in h1 { bottom: 0; opacity: 1; }
 

@@ -60,12 +60,13 @@ window.HS.Skills = (function () {
             console.log('in');
             nav.style.top = '0';
         },
-        fadeOut: function () {
+        fadeOut: function (callback) {
             nav.style.top = '-41px';
             skillsDiv.className = 'fade-out';
             setTimeout(function () {
                 document.documentElement.classList.remove('skills-page');
-            }, 500);
+                callback();
+            }, 1100);
         },
         onresize: function () {
             HS.Site.resizeCanvas('#FFF056');

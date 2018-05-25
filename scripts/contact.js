@@ -7,6 +7,10 @@ if (!window.HS)
 window.HS.Contact = (function () {
     var contactDiv = document.getElementById('contact-page'), nav = document.querySelector('nav');
 
+    document.getElementById('twitter-link').onclick = function () {
+        alert('I don\'t really have a Twitter, I just wanted 4 links so they fit neatly in the page. Sorry!');
+    }
+
     return {
         fadeInFromAnotherPage: function (src) {
             var canvas = document.getElementById('background-canvas');
@@ -19,7 +23,7 @@ window.HS.Contact = (function () {
                 canvas.getContext('2d'),
                 canvas.width,
                 canvas.height,
-                count, 1000, vertical, direction, '#FFF056', function () {
+                count, 1000, vertical, direction, '#FF5656', function () {
                     window.scrollTo(0, 0);
                     nav.style.top = '-41px';
                     document.documentElement.classList.remove('contact-page');
@@ -27,8 +31,9 @@ window.HS.Contact = (function () {
                     void (contactDiv.offsetHeight);
                     void (nav.offsetHeight);
                     document.documentElement.classList.add('contact-page');
-                    HS.Site.resizeCanvas('#FFF056');
                     contactDiv.className = 'fade-in';
+                    HS.Site.resizeCanvas('#FF5656');
+                    HS.Site.resizeCanvas('#FF5656');//Twice to remove the scroll bar, for some reason it doesn't go away automatically
                     nav.style.top = '0';
                 });
         },
@@ -40,20 +45,20 @@ window.HS.Contact = (function () {
             void (contactDiv.offsetHeight);
             void (nav.contactDiv);
             document.documentElement.classList.add('contact-page');
-            HS.Site.resizeCanvas('#FFF056');
+            HS.Site.resizeCanvas('#FF5656');
             contactDiv.className = 'fade-in';
-            console.log('in');
             nav.style.top = '0';
         },
-        fadeOut: function () {
+        fadeOut: function (callback) {
             nav.style.top = '-41px';
             contactDiv.className = 'fade-out';
             setTimeout(function () {
                 document.documentElement.classList.remove('contact-page');
+                callback();
             }, 500);
         },
         onresize: function () {
-            HS.Site.resizeCanvas('#FFF056');
+            HS.Site.resizeCanvas('#FF5656');
         }
     }
 })();

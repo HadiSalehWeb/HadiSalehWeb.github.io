@@ -40,10 +40,11 @@ window.HS.Home = (function () {
             TentacleManager.draw();
             homeDiv.className = 'fade-in';
         },
-        fadeOut: function () {
+        fadeOut: function (callback) {
             homeDiv.className = 'fade-out';
             setTimeout(function () {
                 document.documentElement.classList.remove('home-page');
+                callback();
             }, 500);
         },
         onresize: function () {

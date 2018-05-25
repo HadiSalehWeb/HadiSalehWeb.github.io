@@ -89,10 +89,11 @@ window.HS.Experiments = (function () {
             }
             fadeIn();
         },
-        fadeOut: function () {
+        fadeOut: function (callback) {
             nav.style.top = '-41px';
             slideExperimentsOut(function () {
                 document.documentElement.classList.remove('experiments-page');
+                callback();
             });
         },
         onresize: function () {
