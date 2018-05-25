@@ -47,8 +47,10 @@ window.HS.Home = (function () {
                 callback();
             }, 500);
         },
-        onresize: function () {
-            HS.Home.fadeIn();
+        onresize: function (dW, dH) {
+            if (document.body.clientWidth < 1100 && dW == 0) return;
+            HS.Site.resizeCanvas();
+            TentacleManager.draw();
         }
     }
 })();

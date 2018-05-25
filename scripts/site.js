@@ -10,11 +10,16 @@ window.HS.Site = (function () {
     var currentTabName, canvas = document.getElementById('background-canvas'), ctx = canvas.getContext('2d');
     var loadingDiv = document.getElementById('loading');
     var nav = document.querySelector('nav');
+    var lastWidth = window.innerWidth, lastHeight = window.innerHeight;
 
     //resize handling
     var doit = null;
-    window.onresize = function () {
-        doit = setTimeout(HS.States[currentTabName].onresize, 50);
+    window.onresize = function (ev) {
+        doit = setTimeout(function () {
+            HS.States[currentTabName].onresize(lastWidth - window.innerWidth, lastHeight - window.innerHeight);
+            lastWidth = window.innerWidth;
+            lastHeight = window.innerHeight;
+        }, 50);
     }
 
     //Navigation hamburger
