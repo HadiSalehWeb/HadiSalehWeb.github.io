@@ -48,6 +48,7 @@ window.HS.Home = (function () {
             }, 500);
         },
         onresize: function (dW, dH) {
+            console.log(dW, dH);
             if (document.body.clientWidth < 1100 && dW == 0) return;
             HS.Site.resizeCanvas();
             TentacleManager.draw();

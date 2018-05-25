@@ -10,15 +10,15 @@ window.HS.Site = (function () {
     var currentTabName, canvas = document.getElementById('background-canvas'), ctx = canvas.getContext('2d');
     var loadingDiv = document.getElementById('loading');
     var nav = document.querySelector('nav');
-    var lastWidth = window.innerWidth, lastHeight = window.innerHeight;
+    var lastWidth = document.body.clientWidth, lastHeight = document.body.clientHeight;
 
     //resize handling
     var doit = null;
     window.onresize = function (ev) {
         doit = setTimeout(function () {
-            HS.States[currentTabName].onresize(lastWidth - window.innerWidth, lastHeight - window.innerHeight);
-            lastWidth = window.innerWidth;
-            lastHeight = window.innerHeight;
+            HS.States[currentTabName].onresize(lastWidth - document.body.clientWidth, lastHeight - document.body.clientHeight);
+            lastWidth = document.body.clientWidth;
+            lastHeight = document.body.clientHeight;
         }, 50);
     }
 
