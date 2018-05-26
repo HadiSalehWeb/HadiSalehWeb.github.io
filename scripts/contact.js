@@ -31,8 +31,8 @@ window.HS.Contact = (function () {
                     void (contactDiv.offsetHeight);
                     void (nav.offsetHeight);
                     document.documentElement.classList.add('contact-page');
-                    contactDiv.className = 'fade-in';
                     HS.Site.resizeCanvas('#FF5656');
+                    contactDiv.className = 'fade-in';
                     HS.Site.resizeCanvas('#FF5656');//Twice to remove the scroll bar, for some reason it doesn't go away automatically
                     nav.style.top = '0';
                 });
