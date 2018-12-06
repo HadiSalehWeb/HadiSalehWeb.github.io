@@ -23,7 +23,7 @@ nav.active ul { top: 40px; }
 
 @media (min-width: 1100px) {
     #nav-toggle { display: none }
-    nav ul { float: right; position: initial; display: inline; font-size: 0.6em; padding: 9px 2px; width: unset; transition: none }
+    nav ul { float: right; position: initial; display: inline; font-size: 0.6em; padding: 9px 2px 0; width: unset; transition: none }
         nav ul li { display: inline; padding: 0 10px; }
 }
 

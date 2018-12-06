@@ -30,7 +30,7 @@ window.HS.Site = (function () {
     var transitionTo = function (name) {
         //var tab = HS.States[name];
         if (currentTabName === name) return;
-        history.pushState({ tabName: name }, "Hadi Saleh", name);
+        // history.pushState({ tabName: name }, "Hadi Saleh", name);
         nav.className = '';
         HS.States[currentTabName].fadeOut(function () {
             HS.States[name].fadeInFromAnotherPage(currentTabName);
@@ -80,8 +80,8 @@ window.HS.Site = (function () {
             HS.States[currentTabName].fadeIn();
         },
         resizeCanvas: function (fillColor) {
+            canvas.height = Math.max(document.body.clientHeight, window.innerHeight);
             canvas.width = document.body.clientWidth;
-            canvas.height = document.body.clientHeight;
             ctx.scale(1, -1);
             ctx.translate(0, -canvas.height);
 

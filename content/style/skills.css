@@ -36,7 +36,7 @@ html.skills-page #main-icon:hover { color: #9CDCFE }
 #skills-page.fade-out #knob .text { top: 10px; opacity: 0; transition-delay: 0s; }
 #skills-page.fade-in #knob .text { top: 0; opacity: 1; transition-delay: .9s; }
 
-#knob .skill .content { text-align: right; white-space: nowrap; padding-left: 10px; }
+#knob .skill .content { text-align: right; white-space: nowrap; padding-left: 10px;height:39px; }
     #knob .skill .content img { margin-top: -10px; position: relative; top: 3px; }
 
 #skills-page.fade-in #knob .skill:nth-child(1):after { width: 100%; }

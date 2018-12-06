@@ -57,7 +57,6 @@ window.HS.Skills = (function () {
             document.documentElement.classList.add('skills-page');
             HS.Site.resizeCanvas('#FFF056');
             skillsDiv.className = 'fade-in';
-            console.log('in');
             nav.style.top = '0';
         },
         fadeOut: function (callback) {

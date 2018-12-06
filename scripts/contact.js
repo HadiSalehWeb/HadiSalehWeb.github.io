@@ -7,9 +7,9 @@ if (!window.HS)
 window.HS.Contact = (function () {
     var contactDiv = document.getElementById('contact-page'), nav = document.querySelector('nav');
 
-    document.getElementById('twitter-link').onclick = function () {
-        alert('I don\'t really have a Twitter, I just wanted 4 links so they fit neatly in the page. Sorry!');
-    }
+    // document.getElementById('twitter-link').onclick = function () {
+    //     alert('I don\'t really have a Twitter, I just wanted 4 links so they fit neatly in the page. Sorry!');
+    // }
 
     return {
         fadeInFromAnotherPage: function (src) {
