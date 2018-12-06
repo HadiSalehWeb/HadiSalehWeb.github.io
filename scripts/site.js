@@ -30,7 +30,7 @@ window.HS.Site = (function () {
     var transitionTo = function (name) {
         //var tab = HS.States[name];
         if (currentTabName === name) return;
-        // history.pushState({ tabName: name }, "Hadi Saleh", name);
+        history.pushState({ tabName: name }, "Hadi Saleh", name);
         nav.className = '';
         HS.States[currentTabName].fadeOut(function () {
             HS.States[name].fadeInFromAnotherPage(currentTabName);
